@@ -1,4 +1,5 @@
 # Standard library imports
+import os
 
 # Remote library imports
 from flask import Flask
@@ -12,7 +13,7 @@ from sqlalchemy import MetaData
 
 # Instantiate app, set attributes
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
 # postgres://demo_game_v2_user:3c5birh6rxpSB2eSNqABmZTnwsF64pj4@dpg-chraa3grddlba9u8m8lg-a.oregon-postgres.render.com/demo_game_v2
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'yjekwsjrfy826592grhkljsdghfkuseygioebfoliwecvrg33p948576cnloutqovn'
