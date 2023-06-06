@@ -60,7 +60,8 @@ class Character(db.Model, SerializerMixin):
     pronouns = db.Column(db.String, nullable=False)
     sex = db.Column(db.String, nullable=False)
     region = db.Column(Enum(
-        "Nemar", "Cyneil", "Corize", "Naurra Isles", "Ausstero"
+        "Nemar", "Cyneil", "Corize", "Naurra Isles", "Ausstero",
+        name="regions"
     ), nullable=False)
 
     created_at = db.Column(db.DateTime, server_default=db.func.now())
