@@ -1,8 +1,8 @@
-"""<descriptive message>
+"""create table rpg
 
-Revision ID: 22f02ed267e0
+Revision ID: 1b91357170d5
 Revises: 
-Create Date: 2023-06-05 22:27:49.536085
+Create Date: 2023-06-06 13:42:11.221397
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '22f02ed267e0'
+revision = '1b91357170d5'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -40,7 +40,7 @@ def upgrade():
     sa.Column('intl', sa.Integer(), nullable=True),
     sa.Column('spd', sa.Integer(), nullable=True),
     sa.Column('evad', sa.Integer(), nullable=True),
-    sa.Column('created_at', sa.DateTime(), server_default=sa.text('(CURRENT_TIMESTAMP)'), nullable=True),
+    sa.Column('created_at', sa.DateTime(), server_default=sa.text('now()'), nullable=True),
     sa.Column('updated_at', sa.DateTime(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
@@ -48,7 +48,7 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('monster_image', sa.String(), nullable=True),
     sa.Column('monster_name', sa.String(), nullable=True),
-    sa.Column('created_at', sa.DateTime(), server_default=sa.text('(CURRENT_TIMESTAMP)'), nullable=True),
+    sa.Column('created_at', sa.DateTime(), server_default=sa.text('now()'), nullable=True),
     sa.Column('updated_at', sa.DateTime(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
@@ -60,7 +60,7 @@ def upgrade():
     sa.Column('email', sa.String(), nullable=True),
     sa.Column('dob', sa.String(), nullable=True),
     sa.Column('_password_hash', sa.String(length=128), nullable=False),
-    sa.Column('created_at', sa.DateTime(), server_default=sa.text('(CURRENT_TIMESTAMP)'), nullable=True),
+    sa.Column('created_at', sa.DateTime(), server_default=sa.text('now()'), nullable=True),
     sa.Column('updated_at', sa.DateTime(), nullable=True),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('email'),
@@ -72,7 +72,7 @@ def upgrade():
     sa.Column('pronouns', sa.String(), nullable=False),
     sa.Column('sex', sa.String(), nullable=False),
     sa.Column('region', sa.Enum('Nemar', 'Cyneil', 'Corize', 'Naurra Isles', 'Ausstero', name='regions'), nullable=False),
-    sa.Column('created_at', sa.DateTime(), server_default=sa.text('(CURRENT_TIMESTAMP)'), nullable=True),
+    sa.Column('created_at', sa.DateTime(), server_default=sa.text('now()'), nullable=True),
     sa.Column('updated_at', sa.DateTime(), nullable=True),
     sa.Column('user_id', sa.Integer(), nullable=True),
     sa.Column('job_stats_id', sa.Integer(), nullable=True),
@@ -91,7 +91,7 @@ def upgrade():
     sa.Column('intl', sa.Integer(), nullable=True),
     sa.Column('spd', sa.Integer(), nullable=True),
     sa.Column('evad', sa.Integer(), nullable=True),
-    sa.Column('created_at', sa.DateTime(), server_default=sa.text('(CURRENT_TIMESTAMP)'), nullable=True),
+    sa.Column('created_at', sa.DateTime(), server_default=sa.text('now()'), nullable=True),
     sa.Column('updated_at', sa.DateTime(), nullable=True),
     sa.Column('monster_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['monster_id'], ['monsters.id'], name=op.f('fk_monster_stats_monster_id_monsters')),
@@ -103,7 +103,7 @@ def upgrade():
     sa.Column('name', sa.String(), nullable=True),
     sa.Column('description', sa.String(), nullable=True),
     sa.Column('character_id', sa.Integer(), nullable=True),
-    sa.Column('created_at', sa.DateTime(), server_default=sa.text('(CURRENT_TIMESTAMP)'), nullable=True),
+    sa.Column('created_at', sa.DateTime(), server_default=sa.text('now()'), nullable=True),
     sa.Column('updated_at', sa.DateTime(), nullable=True),
     sa.ForeignKeyConstraint(['character_id'], ['characters.id'], name=op.f('fk_inventories_character_id_characters')),
     sa.PrimaryKeyConstraint('id')
