@@ -6,8 +6,8 @@ from sqlalchemy import Enum, event
 from sqlalchemy.ext.hybrid import hybrid_property
 from bcrypt import hashpw, gensalt
 from flask_bcrypt import Bcrypt
-from config import db, app
-
+from config import create_app
+app, db = create_app()
 bcrypt = Bcrypt(app)
 
 # Models go here!
