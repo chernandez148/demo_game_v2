@@ -1,8 +1,8 @@
 """<descriptive message>
 
-Revision ID: 02459a4077cc
+Revision ID: 22f02ed267e0
 Revises: 
-Create Date: 2023-06-05 21:44:39.471422
+Create Date: 2023-06-05 22:27:49.536085
 
 """
 from alembic import op
@@ -10,8 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-regions_enum = sa.Enum('Nemar', 'Cyneil', 'Corize', 'Naurra Isles', 'Ausstero', name='regions_enum')
-revision = '02459a4077cc'
+revision = '22f02ed267e0'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -67,20 +66,19 @@ def upgrade():
     sa.UniqueConstraint('email'),
     sa.UniqueConstraint('username')
     )
-    op.create_table(
-        'characters',
-        sa.Column('id', sa.Integer(), nullable=False),
-        sa.Column('character_name', sa.String(), nullable=True),
-        sa.Column('pronouns', sa.String(), nullable=False),
-        sa.Column('sex', sa.String(), nullable=False),
-        sa.Column('region', regions_enum, nullable=False),
-        sa.Column('created_at', sa.DateTime(), server_default=sa.text('(CURRENT_TIMESTAMP)'), nullable=True),
-        sa.Column('updated_at', sa.DateTime(), nullable=True),
-        sa.Column('user_id', sa.Integer(), nullable=True),
-        sa.Column('job_stats_id', sa.Integer(), nullable=True),
-        sa.ForeignKeyConstraint(['job_stats_id'], ['job_stats.id'], name=op.f('fk_characters_job_stats_id_job_stats')),
-        sa.ForeignKeyConstraint(['user_id'], ['users.id'], name=op.f('fk_characters_user_id_users')),
-        sa.PrimaryKeyConstraint('id')
+    op.create_table('characters',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('character_name', sa.String(), nullable=True),
+    sa.Column('pronouns', sa.String(), nullable=False),
+    sa.Column('sex', sa.String(), nullable=False),
+    sa.Column('region', sa.Enum('Nemar', 'Cyneil', 'Corize', 'Naurra Isles', 'Ausstero', name='regions'), nullable=False),
+    sa.Column('created_at', sa.DateTime(), server_default=sa.text('(CURRENT_TIMESTAMP)'), nullable=True),
+    sa.Column('updated_at', sa.DateTime(), nullable=True),
+    sa.Column('user_id', sa.Integer(), nullable=True),
+    sa.Column('job_stats_id', sa.Integer(), nullable=True),
+    sa.ForeignKeyConstraint(['job_stats_id'], ['job_stats.id'], name=op.f('fk_characters_job_stats_id_job_stats')),
+    sa.ForeignKeyConstraint(['user_id'], ['users.id'], name=op.f('fk_characters_user_id_users')),
+    sa.PrimaryKeyConstraint('id')
     )
     op.create_table('monster_stats',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -121,6 +119,4 @@ def downgrade():
     op.drop_table('users')
     op.drop_table('monsters')
     op.drop_table('job_stats')
-    regions_enum.drop(op.get_bind(), checkfirst=False)
     # ### end Alembic commands ###
-
