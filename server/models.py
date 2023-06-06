@@ -7,7 +7,8 @@ from sqlalchemy.ext.hybrid import hybrid_property
 from bcrypt import hashpw, gensalt
 from flask_bcrypt import Bcrypt
 from config import create_app
-app, db = create_app()
+app = create_app()
+db = app.db
 bcrypt = Bcrypt(app)
 
 # Models go here!
