@@ -8,7 +8,8 @@ from flask_restful import Resource
 from sqlalchemy.exc import IntegrityError
 
 # Local imports
-from config import app, db, api
+from config import create_app
+app, db, api = create_app()
 from models import User, Character, JobStats, Monster, MonsterStats, Inventory
 
 # Views go here!
