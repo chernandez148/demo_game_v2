@@ -1,0 +1,67 @@
+@import '../../../fonts/fonts.css';
+
+.Continue h1 {
+    font-family: 'Italianno', cursive;
+    padding-bottom: 15px;
+}
+
+h2 {
+    font-weight: 300;
+}
+
+.savedData {
+    background: #000000b3;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.savedFile {
+    border-color: #ffffff2b !important;
+    transition: background-color .25s ease-in-out;
+    padding: 25px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.savedFile:last-child {
+    border: 0;
+}
+
+.savedFile:hover {
+    background: #0000007d;
+    cursor: pointer;
+}
+
+.savedFile span {
+    margin: 8px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.edit-delete {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.edit-delete span {
+    font-size: 24px;
+}
+
+.editbox span {
+    color: white;
+    font-size: 36px;
+}
+
+.username-input {
+    height: fit-content;
+}
+
+.edit-form input,
+select {
+    border: 1px solid #00deff8a;
+    background-color: #000000b8 !important;
+    box-shadow: 0px 0px 8px #00deff8a;
+}

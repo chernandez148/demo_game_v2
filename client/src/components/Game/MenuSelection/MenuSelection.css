@@ -1,0 +1,29 @@
+@import url("../../../fonts/fonts.css");
+
+.MenuSelection ul {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgb(203 0 0 / 44%) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.MenuSelection li {
+    font-weight: 300;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.MenuSelection li a {
+    font-size: 14px;
+    padding: 6px 60px 6px 15px;
+    line-height: 30px;
+    transition: background-color 1s ease-in-out;
+}
+
+.MenuSelection li a:hover {
+    background: linear-gradient(90deg, rgba(203, 0, 0, 0.753) 0%, rgba(0, 0, 0, 0) 100%);
+    color: white;
+}
+
+.titleFont {
+    font-family: 'Italianno', cursive;
+    transition: opacity 1s ease-in-out !important;
+
+}

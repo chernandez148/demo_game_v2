@@ -1,0 +1,98 @@
+@import '../../../fonts/fonts.css';
+
+.CharacterCreation {
+    transition: opacity 1s ease-in-out;
+}
+
+.CharacterCreation label {
+    font-size: 12px;
+}
+
+.CharacterCreation label,
+input,
+select,
+option {
+    padding: .25rem 0;
+    margin: .25rem;
+}
+
+.CharacterCreation input,
+select {
+    border: 1px solid #00deff8a;
+    background-color: #000000b8 !important;
+    box-shadow: 0px 0px 8px #00deff8a;
+}
+
+input,
+select {
+    padding-left: .5rem;
+    color: #d5d5d5 !important;
+    font-size: 12px;
+}
+
+.job-stats h1,
+.personal-information h1,
+label,
+button {
+    color: white;
+
+    text-shadow: 0 0 10px #00b3ff,
+        0 0 20px #00b3ff,
+        0 0 40px #00b3ff,
+        0 0 80px #00b3ff,
+        0 0 120px #00b3ff;
+}
+
+.job input[type="radio"] {
+    display: none;
+}
+
+.job input[type="radio"]+label {
+    width: 75px;
+    /* adjust size as needed */
+    height: 75px;
+    cursor: pointer;
+    background: #00000073;
+    margin: .5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.job input[type="radio"]:checked+label {
+    /* add styles for the selected state */
+    border: 1px solid #00deff8a;
+    background-color: #000000b8;
+    box-shadow: 0px 0px 8px #00deff8a;
+}
+
+span {
+    font-size: 12px;
+    color: rgb(255, 119, 119);
+}
+
+.job-stats h1 {
+    font-family: 'Italianno', cursive;
+}
+
+.job-stats span {
+    color: white;
+    padding: 6px 0;
+}
+
+.z-indez-2 {
+    z-index: -2;
+}
+
+.z-index-0 {
+    z-index: 0;
+}
+
+.confirmBox {
+    background: #000000c7;
+}
+
+.textBox {
+    background: #1a1a1a;
+    padding: 1.5rem 5rem;
+    box-shadow: 0px 0px 18px 5px #ffffff29;
+}

@@ -1,0 +1,43 @@
+@import '../../../fonts/fonts.css';
+
+.GameMap {
+    transition: opacity 1s ease-in-out;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.5);
+}
+
+.menu {
+    transition: opacity 1s ease-in-out;
+    background-image: url("../../../assets/menuimg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.menu h1 {
+    font-family: 'Italianno', cursive;
+    padding-bottom: 15px;
+}
+
+.menu span {
+    color: white;
+    padding-right: 1rem;
+}
+
+.menu li {
+    font-weight: 300;
+    padding: 12px 0;
+}
+
+.question-mark {
+    color: white;
+    position: fixed;
+    top: 310px;
+    left: 560px;
+    font-size: 50px;
+    font-weight: 900;
+}

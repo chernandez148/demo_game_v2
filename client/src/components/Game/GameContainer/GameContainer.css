@@ -1,0 +1,9 @@
+.GameContainer {
+    width: 1024px;
+    height: 576px;
+    background-color: black;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0px 0px 20px 0px #ffffff4d;
+    border: 1px solid white;
+}

@@ -1,0 +1,11 @@
+.TitleScreen {
+    background-image: url("../../../assets/home-screen2.jpg");
+    background-size: cover;
+    background-position: bottom;
+    filter: opacity(0);
+    transition: filter 1s ease-in-out;
+}
+
+.fadeIn {
+    filter: opacity(1);
+}

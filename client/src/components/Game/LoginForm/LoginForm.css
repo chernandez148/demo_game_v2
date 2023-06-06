@@ -1,0 +1,17 @@
+.model-box {
+    background-color: #ffffff14;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(6px);
+    box-shadow: 0px 0px 5px #ffffff7a;
+}
+
+.model-box input {
+    background-color: transparent;
+    border: 0;
+    color: rgba(255, 255, 255, 0.699);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.432);
+}
+
+input:focus {
+    outline: none;
+}
