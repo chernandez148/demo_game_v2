@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { CiEdit, CiTrash } from 'react-icons/ci';
 import { MdOutlineKeyboardReturn } from 'react-icons/md'
-import bg_video from '../../../assets/character_creation_screen.mp4'
+import bg_video from '../../../assets/video/character_creation_screen.mp4'
 import './Continue.css'
 
 const sessionStorage = window.sessionStorage;
@@ -31,7 +31,7 @@ function Continue({ setFadeIn, character, setLoadFile }) {
         return () => {
             clearTimeout(fadeOutTimeout);
         };
-    }, []);
+    }, [setFadeIn]);
 
     const showContinueScreen = continueScreenBG ? "opacity-1" : "opacity-0";
 

@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import { RecoilRoot } from 'recoil';
+import GameContainer from '../Game/GameContainer/GameContainer';
+import video from '../../assets/video/background_game.mp4'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='video-container flex items-center justify-center h-screen'>
+      <div className="video-overlay"></div>
+      <div className="video-background">
+        <video autoPlay loop muted>
+          <source src={video} type="video/mp4" />
+        </video>
+      </div>
+      <RecoilRoot>
+        <GameContainer />
+      </RecoilRoot>
     </div>
+
   );
 }
 

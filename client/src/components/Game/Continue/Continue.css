@@ -1,4 +1,4 @@
-@import '../../../fonts/fonts.css';
+@import url("../../../fonts/fonts.css");
 
 .Continue h1 {
     font-family: 'Italianno', cursive;

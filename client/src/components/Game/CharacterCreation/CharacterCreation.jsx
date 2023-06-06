@@ -2,23 +2,23 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik'
 import { BsArrowRightShort } from 'react-icons/bs'
-import MaleKnight from '../../../assets/knight/male/male-knight.png'
-import FemaleKnight from '../../../assets//knight/female/female-knight.png'
-import MaleGunslinger from '../../../assets/gunslinger/male/male-gunslinger.png'
-import FemaleGunslinger from '../../../assets/gunslinger/female/female-gunslinger.png'
-import MaleArcher from '../../../assets/archer/male/male-archer.png'
-import FemaleArcher from '../../../assets/archer/female/female-archer.png'
-import MaleThief from '../../../assets/thief/male/male-thief.png'
-import FemaleThief from '../../../assets/thief/female/female-thief.png'
-import MaleWarrior from '../../../assets/warrior/male/male-warrior.png'
-import FemaleWarrior from '../../../assets/warrior/female/female-warrior.png'
-import MaleBerserker from '../../../assets/berserker/male/male-berserker.png'
-import FemaleBerserker from '../../../assets/berserker/female/female-berserker.png'
-import MaleBlackMage from '../../../assets/black_mage/male/male-black-mage.png'
-import FemaleBlackeMage from '../../../assets/black_mage/female/female-black-mage.png'
-import MaleWhiteMage from '../../../assets/white_mage/male/male-white-mage.png'
-import FemaleWhiteMage from '../../../assets/white_mage/female/female-white-mage.png'
-import bg_video from '../../../assets/character_creation_screen.mp4'
+import MaleKnight from '../../../assets/img/knight/male/male-knight.png'
+import FemaleKnight from '../../../assets/img/knight/female/female-knight.png'
+import MaleGunslinger from '../../../assets/img/gunslinger/male/male-gunslinger.png'
+import FemaleGunslinger from '../../../assets/img/gunslinger/female/female-gunslinger.png'
+import MaleArcher from '../../../assets/img/archer/male/male-archer.png'
+import FemaleArcher from '../../../assets/img/archer/female/female-archer.png'
+import MaleThief from '../../../assets/img/thief/male/male-thief.png'
+import FemaleThief from '../../../assets/img/thief/female/female-thief.png'
+import MaleWarrior from '../../../assets/img/warrior/male/male-warrior.png'
+import FemaleWarrior from '../../../assets/img/warrior/female/female-warrior.png'
+import MaleBerserker from '../../../assets/img/berserker/male/male-berserker.png'
+import FemaleBerserker from '../../../assets/img/berserker/female/female-berserker.png'
+import MaleBlackMage from '../../../assets/img/black_mage/male/male-black-mage.png'
+import FemaleBlackeMage from '../../../assets/img/black_mage/female/female-black-mage.png'
+import MaleWhiteMage from '../../../assets/img/white_mage/male/male-white-mage.png'
+import FemaleWhiteMage from '../../../assets/img/white_mage/female/female-white-mage.png'
+import bg_video from '../../../assets/video/character_creation_screen.mp4'
 import * as yup from 'yup'
 import './CharacterCreation.css'
 
@@ -45,7 +45,7 @@ function CharacterCreation({ setFadeIn, jobData, addCharacter }) {
         return () => {
             clearTimeout(fadeOutTimeout);
         };
-    }, []);
+    }, [setFadeIn]);
 
     const handleConfirm = () => {
         setConfirm(true)

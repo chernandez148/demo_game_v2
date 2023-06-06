@@ -3,7 +3,7 @@ import CharacterInfo from '../CharacterInfo/CharacterInfo';
 import { Link, Outlet } from "react-router-dom";
 import { collisionsArray } from '../../Data/Collision';
 import { chestsArray } from '../../Data/Chest';
-import Map from '../../../assets/demo-map-1.png'
+import Map from '../../../assets/img/demo-map.png'
 import './GameMap.css'
 
 function GameMap({ loadFile, setFadeIn }) {
@@ -23,7 +23,7 @@ function GameMap({ loadFile, setFadeIn }) {
         }, 3000);
 
         return () => clearTimeout(fadeIn);
-    }, [])
+    }, [setFadeIn])
 
     useEffect(() => {
         function handleKeyPress(event) {
@@ -51,7 +51,7 @@ function GameMap({ loadFile, setFadeIn }) {
         return () => {
             document.removeEventListener('keydown', handleKeyPress);
         };
-    }, []);
+    }, [treasureChest]);
 
 
     useEffect(() => {
