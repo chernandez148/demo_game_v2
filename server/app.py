@@ -7,10 +7,18 @@ from flask import request, make_response, session, abort, jsonify
 from flask_restful import Resource
 from sqlalchemy.exc import IntegrityError
 
-# Local imports
 from config import create_app
-app, db, api = create_app()
+
+app = create_app()
+
+db = app.db
+api = app.api
+migrate = app.migrate
+
 from models import User, Character, JobStats, Monster, MonsterStats, Inventory
+
+# Rest of your code...
+
 
 # Views go here!
 

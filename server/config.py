@@ -15,7 +15,6 @@ from sqlalchemy import MetaData
 def create_app():
     app = Flask(__name__)
     app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
-    # postgres://demo_game_v2_user:3c5birh6rxpSB2eSNqABmZTnwsF64pj4@dpg-chraa3grddlba9u8m8lg-a.oregon-postgres.render.com/demo_game_v2
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.secret_key = 'yjekwsjrfy826592grhkljsdghfkuseygioebfoliwecvrg33p948576cnloutqovn'
     app.json.compact = False
@@ -34,4 +33,10 @@ def create_app():
     # Instantiate CORS
     CORS(app)
 
-    return app, db, api, migrate
+    # Store db, api, and migrate as attributes of the app object
+    app.db = db
+    app.api = api
+    app.migrate = migrate
+
+    return app
+
