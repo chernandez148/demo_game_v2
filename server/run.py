@@ -1,3 +1,3 @@
-from config import create_app
+from server.config import create_app
 
 app = create_app()
