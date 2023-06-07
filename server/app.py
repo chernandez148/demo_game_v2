@@ -3,7 +3,7 @@
 # Standard library imports
 
 # Remote library imports
-from flask import request, make_response, session, abort, jsonify
+from flask import request, make_response, session, abort, jsonify, render_template
 from flask_restful import Resource
 from sqlalchemy.exc import IntegrityError
 
@@ -12,6 +12,12 @@ from config import app, db, api
 from models import User, Character, JobStats, Monster, MonsterStats, Inventory
 
 # Views go here!
+
+
+@app.route('/')
+@app.route('/<int:id>')
+def index(id=0):
+    return render_template("index.html")
 
 class SignUp(Resource):
 
