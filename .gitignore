@@ -46,8 +46,7 @@ jspm_packages
 
 # Virtual env metadata
 .venv
-instance/
+.env
 
 # pytest cache
 .pytest_cache
-__pycache__/
