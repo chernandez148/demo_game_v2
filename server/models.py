@@ -4,7 +4,7 @@ from sqlalchemy.orm import validates
 from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy import Enum, event
 from sqlalchemy.ext.hybrid import hybrid_property
-from config import db, app, bcrypt
+from config import db, app, flask_bcrypt
 from bcrypt import hashpw, gensalt
 
 
@@ -38,7 +38,7 @@ class User(db.Model, SerializerMixin):
         self._password_hash = hashpw(password.encode('utf-8'), salt).decode('utf-8')
 
     def authenticate(self, password):
-        return bcrypt.check_password_hash(self._password_hash, password.encode('utf-8'))
+        return flask_bcrypt.check_password_hash(self._password_hash, password.encode('utf-8'))
 
     @validates('email')
     def validate_email(self, key, email):
