@@ -4,11 +4,9 @@ from sqlalchemy.orm import validates
 from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy import Enum, event
 from sqlalchemy.ext.hybrid import hybrid_property
+from config import db, app, bcrypt
 from bcrypt import hashpw, gensalt
-from flask_bcrypt import Bcrypt
-from config import db, app
 
-bcrypt = Bcrypt(app)
 
 # Models go here!
 class User(db.Model, SerializerMixin):
