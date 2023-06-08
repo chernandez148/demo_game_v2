@@ -24,7 +24,7 @@ function TitleScreen() {
         fetchJobStats()
         fetchCharacters()
         fetchInventoryData()
-    }, []);
+ }, [mainMenu, fetchUser, fetchJobStats, fetchCharacters, fetchInventoryData]);
 
     const mainMenu = () => {
         const MainMenuFadeIn = setTimeout(() => {
